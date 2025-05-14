@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "clover": "github:kiki-lee/clover-images"
+        "clover": "github:kiki-lee/clover-images",
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
     },
     "files": [
         "main.blocks",
@@ -19,7 +20,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "2.0.46",
+        "target": "2.0.56",
         "targetId": "arcade"
     },
     "supportedTargets": [

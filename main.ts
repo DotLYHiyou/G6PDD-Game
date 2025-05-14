@@ -57,6 +57,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+info.onScore(1000, function () {
+    scene.setBackgroundImage(assets.image`Background V4`)
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     hero,
@@ -115,6 +118,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     200,
     true
     )
+})
+info.onScore(1500, function () {
+    scene.setBackgroundImage(assets.image`Background V5`)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -239,6 +245,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+info.onScore(500, function () {
+    scene.setBackgroundImage(assets.image`Background V3`)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 100)
     music.bigCrash.play()
@@ -249,11 +258,12 @@ let bad_to_eat_2: Sprite = null
 let good_to_eat2: Sprite = null
 let good_to_eat: Sprite = null
 let hero: Sprite = null
-scene.setBackgroundImage(assets.image`background`)
+info.setScore(1499)
+scene.setBackgroundImage(assets.image`Background V2`)
 hero = sprites.create(assets.image`hero`, SpriteKind.Player)
 controller.moveSprite(hero)
 hero.setStayInScreen(true)
-info.setLife(3)
+info.setLife(4)
 game.onUpdateInterval(5000, function () {
     good_to_eat = sprites.createProjectileFromSide(img`
         . . . . . . . e e e e . . . . . 
@@ -290,7 +300,7 @@ game.onUpdateInterval(5000, function () {
         . . . . . . . . . . . c 1 d d b 
         . . . . . . . . . . . c 1 b c . 
         . . . . . . . . . . . . c c . . 
-        `, 50, 50)
+        `, randint(-50, 50), randint(-50, 50))
     bad_to_eat_2 = sprites.createProjectileFromSide(img`
         ..................................................
         ..................................................
@@ -342,7 +352,7 @@ game.onUpdateInterval(5000, function () {
         ..................................................
         ..................................................
         ..................................................
-        `, randint(-50, 50), randint(-50, 50))
+        `, randint(-10, 50), randint(-10, 50))
     bad_to_eat = sprites.createProjectileFromSide(img`
         ..................................................
         ..................................................
@@ -394,7 +404,7 @@ game.onUpdateInterval(5000, function () {
         ..................................................
         ..................................................
         ..................................................
-        `, randint(-50, 50), randint(-50, 50))
+        `, randint(-10, 50), randint(-10, 50))
     bad_to_eat.setKind(SpriteKind.Enemy)
     bad_to_eat_2.setKind(SpriteKind.Enemy)
 })
