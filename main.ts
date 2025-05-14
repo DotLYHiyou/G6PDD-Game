@@ -258,7 +258,6 @@ let bad_to_eat_2: Sprite = null
 let good_to_eat2: Sprite = null
 let good_to_eat: Sprite = null
 let hero: Sprite = null
-info.setScore(1499)
 scene.setBackgroundImage(assets.image`Background V2`)
 hero = sprites.create(assets.image`hero`, SpriteKind.Player)
 controller.moveSprite(hero)
